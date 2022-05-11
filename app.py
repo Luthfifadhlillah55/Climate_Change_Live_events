@@ -10,13 +10,13 @@ from copy import deepcopy
 
 currentYear = datetime.now().year
 
-fn = 'https://raw.githubusercontent.com/gschivley/climate-life-events/master/iamc_db.csv'
+fn = 'https://raw.githubusercontent.com/Luthfifadhlillah55/Climate_Change_Live_events/main/iamc_db.csv'
 df = pd.read_csv(fn)
 df['climate'] = df['Scenario'].str.split('-').str[-1]
 climates = df['climate'].unique()
 years = pd.to_datetime(df.columns[6:-1], yearfirst=True)
 
-fn = 'https://raw.githubusercontent.com/gschivley/climate-life-events/master/GISS_temps.csv'
+fn = 'https://raw.githubusercontent.com/Luthfifadhlillah55/Climate_Change_Live_events/main/GISS_temps.csv'
 hist = pd.read_csv(fn)
 hist['datetime'] = pd.to_datetime(hist['datetime'], yearfirst=True)
 
